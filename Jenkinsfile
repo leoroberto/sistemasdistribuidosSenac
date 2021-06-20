@@ -3,13 +3,13 @@ pipeline {
   stages {
     stage('Build da Imagem') {
       steps {
-        def app = docker.build("leoroberto/demonode:latest")
+        sh 'docker build -t leoroberto/demonode:latest .'
       }
     }
 
     stage('Executar imagem') {
       steps {
-        app.run()
+        sh 'docker run -p 80:8080 leoroberto/demonode:latest'
       }
     }
 

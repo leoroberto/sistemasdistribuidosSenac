@@ -1,10 +1,9 @@
 pipeline {
-  def app
   agent any
   stages {
     stage('Build da Imagem') {
       steps {
-        app = docker.build("leoroberto/demonode:latest")
+        def app = docker.build("leoroberto/demonode:latest")
       }
     }
 

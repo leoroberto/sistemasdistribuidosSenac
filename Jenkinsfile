@@ -15,7 +15,7 @@ pipeline {
 
     stage('Remover imagem antiga') {
       steps {
-        sh 'docker rm node'
+        sh 'docker rm $(docker ps -aq)'
       }
     }
 

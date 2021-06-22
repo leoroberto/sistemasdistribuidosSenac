@@ -9,7 +9,7 @@ pipeline {
 
     stage('Parar imagem antiga') {
       steps {
-        sh 'docker stop node'
+        sh 'docker stop $(docker ps -aq)'
       }
     }
 
